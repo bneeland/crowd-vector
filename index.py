@@ -85,6 +85,6 @@ for i, person1 in enumerate(people):
     else:
         print(person1[0] + " is already a vector beginning")
 
-print(len(people))
-print(len(vectors.keys()))
-print(len(vectors.values()))
+print(people_dict.keys(), len(people_dict))
+print(vectors.keys(), len(vectors.keys()))
+print(vectors.values(), len(vectors.values()))
