@@ -1,35 +1,38 @@
 import random
 
 people = [
-    ['Michael', 'michael@example.com'],
-    ['Laura', 'laura@example.com'],
-    ['Caroline', 'caroline@example.com'],
-    ['Emilie-Anne', 'emilieanne@example.com'],
-    ['Dana', 'dana@example.com'],
-    ['Brian', 'brian@example.com'],
-    ['Elise', 'elise@example.com'],
+    ['Garth', 'Garth@example.com'],
+    ['Jo', 'Jo@example.com'],
+    ['Kris', 'Kris@example.com'],
+    ['Denver', 'Denver@example.com'],
+    ['Kara', 'Kara@example.com'],
+    ['Dana', 'Dana@example.com'],
+    ['Brian', 'Brian@example.com'],
+    ['Kjell', 'Kjell@example.com'],
+    ['Renee', 'Renee@example.com'],
 ]
 
 random.shuffle(people)
 
 people_dict = {person[0]:person[1] for person in people}
 
+# Just converting list to dictionary
 for person_dict in people_dict:
     print(person_dict)
 
-# [Person1, Person1]: Person1 must give to Person2
-inclusions = [
-    ['Laura', 'Elise'],
-    ['Michael', 'Brian'],
-]
+# Legend: [Person1, Person1]--Person1 must give to Person2
+inclusions = []
 
-# [Person1, Person1]: Person1 must not give to Person2
+# Legend: [Person1, Person1]--Person1 must not give to Person2
 exclusions = [
-    ['Brian', 'Dana'],
+    ['Garth', 'Jo'],
+    ['Jo', 'Garth'],
+    ['Denver', 'Kara'],
+    ['Kara', 'Denver'],
     ['Dana', 'Brian'],
-    ['Caroline', 'Emilie-Anne'],
-    ['Michael', 'Elise'],
-    ["Emilie-Anne", "Caroline"]
+    ['Brian', 'Dana'],
+    ['Kjell', 'Renee'],
+    ['Renee', 'Kjell'],
 ]
 
 vectors = {}
@@ -81,3 +84,7 @@ for i, person1 in enumerate(people):
                     print(vectors)
     else:
         print(person1[0] + " is already a vector beginning")
+
+print(len(people))
+print(len(vectors.keys()))
+print(len(vectors.values()))
