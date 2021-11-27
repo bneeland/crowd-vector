@@ -68,7 +68,3 @@ def get_vectors(people_list, people_dict, inclusions, exclusions):
                     vectors = get_vectors(people_list, people_dict, inclusions, exclusions)
                     return vectors
     return vectors
-
-
-def print_list(list):
-    print(list)
