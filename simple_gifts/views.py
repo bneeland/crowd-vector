@@ -15,5 +15,12 @@ class AssignerView(FormView):
         names = data['names'].split("\r\n")
         emails = data['emails'].split("\r\n")
         people = [[name, email] for name, email in zip(names, emails)]
-        methods.print_list(people)
+        print(people)
+        people_list, people_dict = methods.randomize_people(people)
+        print(people_list)
+        print(people_dict)
+        inclusions = []
+        exclusions = []
+        vectors = methods.get_vectors(people_list, people_dict, inclusions, exclusions)
+        print(vectors)
         return super().form_valid(form)
