@@ -21,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gsw@wmi)*8bwf@ra(2)$*s9tr*7!qq%2_y@wu&$#6f0ummwqji'
+SECRET_KEY = os.environ.get('SECRET_KEY_SIMPLE_GIFTS')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost:8000'
+    'https://simple-gifts-app.herokuapp.com',
+]
 
 
 # Application definition
@@ -134,3 +137,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('SIMPLE_GIFTS_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('SIMPLE_GIFTS_PASSWORD')
 DEFAULT_FROM_EMAIL = 'Simple Gifts App <hello@simplegiftsapp.com>'
+
+import django_heroku
+django_heroku.settings(locals())
