@@ -128,9 +128,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.postmarkapp.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'brian.neeland@gmail.com'
-EMAIL_HOST_PASSWORD = 'adbjnchmfxjzsbnu'
-DEFAULT_FROM_EMAIL = 'brian.neeland@gmail.com'
+EMAIL_HOST_USER = os.environ.get('SIMPLE_GIFTS_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('SIMPLE_GIFTS_PASSWORD')
+DEFAULT_FROM_EMAIL = 'Simple Gifts App <hello@simplegiftsapp.com>'
