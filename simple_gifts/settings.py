@@ -28,7 +28,7 @@ SECRET_KEY = '7468364e7d821ccd6a3881874e5da32ec13d9c23f95832c7'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'localhost:8000'
+    'localhost',
     'https://simple-gifts-app.herokuapp.com',
 ]
 
