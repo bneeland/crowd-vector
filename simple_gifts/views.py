@@ -16,26 +16,17 @@ class AssignerView(FormView):
         names = data['names'].split('\r\n')
         emails = data['emails'].split('\r\n')
         people = [[name, email] for name, email in zip(names, emails)]
-        print(people)
         people_list, people_dict = methods.randomize_people(people)
-        print(people_list)
-        print(people_dict)
         inclusions = data['inclusions'].split('\r\n')
         exclusions = data['exclusions'].split('\r\n')
-        print(inclusions)
-        print(exclusions)
         inclusions = [inclusion.split(',') for inclusion in inclusions]
         if inclusions == [['']]:
             inclusions = []
         exclusions = [exclusion.split(',') for exclusion in exclusions]
         if exclusions == [['']]:
             exclusions = []
-        print(inclusions)
-        print(exclusions)
         try:
             vectors = methods.get_vectors(people_list, people_dict, inclusions, exclusions)
-            print(vectors)
-
             for vector in vectors.items():
                 vector_a = vector[0]
                 vector_b = vector[1]
@@ -50,10 +41,6 @@ class AssignerView(FormView):
                     )
                 except:
                     print(f"Failed sending email to: {vector_a}")
-
         except:
-            print("get_vectors failed")
-
-
-
+            print("Failed getting vectors")
         return super().form_valid(form)
