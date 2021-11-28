@@ -13,6 +13,8 @@ def randomize_people(people_list):
 
     return people_list, people_dict
 
+
+
 def get_vectors(people_list, people_dict, inclusions, exclusions):
     vectors = {}
 
