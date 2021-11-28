@@ -1,6 +1,5 @@
 <p>Enter the names and emails of the people with whom you want to organize an exchange.</p>
-<p>Enter each name on a separate line</p>
-<p>Enter each email, in the same order as the names, on a separate line.</p>
+<p>You can also enter inclusions (people you want to be matched together) and exclusions (people you don't want to be matched together).
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Assign names">
