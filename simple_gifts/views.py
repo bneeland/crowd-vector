@@ -37,7 +37,7 @@ class AssignerView(FormView):
                         from_email='Simple Gifts App <hello@simplegiftsapp.com>',
                         recipient_list=[people_dict[vector_a]],
                         fail_silently=True,
-                        html_message=f"--------------------------------<br>TO: {vector_a}\nFROM: Gift exhange random assignment program\nRE: Christmas 2021 gift exchange - Your randomly-assigned giftee<br>--------------------------------<br><br>Dear {vector_a},\n\nThis email is an automated message from a gift exhange random assignment program. The program has assigned names for your Christmas 2021 gift exchange.\n\nThe name it 'drew' for you is:<br><br><b>{vector_b}</b><br><br>You will, therefore, give a gift to {vector_b}. Someone else will have 'drawn' your name, and will give you a gift for Christmas!\n\nMerry Christmas!",
+                        html_message=f"--------------------------------<br>TO: {vector_a}<br>FROM: Gift exhange random assignment program<br>RE: Christmas 2021 gift exchange - Your randomly-assigned giftee<br>--------------------------------<br><br>Dear {vector_a},\n\nThis email is an automated message from a gift exhange random assignment program. The program has assigned names for your Christmas 2021 gift exchange.\n\nThe name it 'drew' for you is:<br><br><b>{vector_b}</b><br><br>You will, therefore, give a gift to {vector_b}. Someone else will have 'drawn' your name, and will give you a gift for Christmas!\n\nMerry Christmas!",
                     )
                 except:
                     print(f"Failed sending email to: {vector_a}")
