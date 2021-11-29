@@ -1,7 +1,8 @@
 <h1>Simple Gifts app</h1>
 <p>Enter the names and emails of the people with whom you want to organize an exchange.</p>
-<p>You can also enter inclusions (people you want to be matched together) and exclusions (people you don't want to be matched together).
+<p>You can also enter inclusions (people you want to be matched together) and exclusions (people you don't want to be matched together).</p>
+<p>When you're done, click the button at the bottom. The program will randomly assign names according to the rules you set out, and will send emails to each person telling him to whom he will give a gift.</p>
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Assign names">
+    <input type="submit" value="Assign names and send emails">
 </form>
