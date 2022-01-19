@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.AssignerView.as_view(), name='assigner_view'),
+    path('assign', views.AssignerView.as_view(), name='assigner_view'),
     path('', views.app_redirect_view, name='app_redirect_view')
 ]
